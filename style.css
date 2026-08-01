@@ -1,0 +1,26 @@
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0f172a;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    text-align:center;
+    background:#1e293b;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0px 0px 20px rgba(0,0,0,.4);
+}
+
+h1{
+    color:#38bdf8;
+}
+
+p{
+    color:#cbd5e1;
+}
