@@ -13,3 +13,7 @@ My first Docker project.
 
 ```bash
 docker build -t hello-devops .
+
+## Project Status
+
+Dockerized application successfully running on localhost.
