@@ -1,6 +1,16 @@
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: hello-devops-compose
     ports:
-      - "8080:80"
+      - "8081:80"
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: hello-devops-backend
+    ports:
+      - "3000:3000"
