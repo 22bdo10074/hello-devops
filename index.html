@@ -1,28 +1,35 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <title>Hello DevOps</title>
-
-    <link rel="stylesheet" href="style.css">
-
-</head>
-
 <body>
 
-<div class="container">
+    <div class="container">
 
-<h1>🚀 Hello DevOps</h1>
+        <h1>Hello DevOps</h1>
 
-<h2>My First Docker Project</h2>
+        <h2>My First Docker Project</h2>
 
-<p>Created by Sandhya</p>
+        <p>Created by Sandhya</p>
 
-<p>Learning Docker Day 4</p>
+        <p>
+            Backend Status:
+            <strong id="backend-response">Checking...</strong>
+        </p>
 
-</div>
+    </div>
+
+    <script>
+        async function checkBackend() {
+            try {
+                const response = await fetch("http://localhost:3000");
+                const data = await response.json();
+
+                document.getElementById("backend-response").textContent =
+                    data.message;
+            } catch (error) {
+                document.getElementById("backend-response").textContent =
+                    "Backend is not reachable";
+            }
+        }
+
+        checkBackend();
+    </script>
 
 </body>
-
-</html>
