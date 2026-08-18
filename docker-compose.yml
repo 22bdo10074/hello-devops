@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: hello-devops-compose
+    restart: unless-stopped
     ports:
       - "8081:80"
 
@@ -12,15 +13,23 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     container_name: hello-devops-backend
+    restart: unless-stopped
     ports:
       - "3000:3000"
     depends_on:
       database:
         condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
   database:
     image: postgres:16-alpine
     container_name: hello-devops-db
+    restart: unless-stopped
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${POSTGRES_USER}
