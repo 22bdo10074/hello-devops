@@ -535,7 +535,8 @@ The application consists of a containerized Nginx frontend, Node.js backend, and
 
 GitHub Actions automates the Docker image build and publishing process, while Docker Hub is used as the container registry.
 
-The project provides practical experience with containerization, networking, persistence, environment configuration, CI/CD, container registries, and basic DevOps automation.# Hello DevOps 🚀
+The project provides practical experience with containerization, networking, persistence, environment configuration, CI/CD, container registries, and basic DevOps automation.
+# Hello DevOps 🚀
 
 > A complete containerized DevOps project demonstrating Docker,
 > Docker Compose, PostgreSQL, GitHub Actions CI/CD, Docker Hub,
